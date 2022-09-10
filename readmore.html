@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+	<style>
+		/* Initially, hide the extra text that
+			can be revealed with the button */
+		#moreText {
+
+			/* Display nothing for the element */
+			display: none;
+        }
+	
+    
+        
+        body {
+            background: rgb(39, 39, 39);
+        }
+  
+        .gr {
+            position: sticky;
+            top: 0%;
+            left: 40%;
+  
+            font-size: 40px;
+            font-family: Arial, Helvetica, sans-serif;
+            background: linear-gradient(to right, #f32170,
+                    #ff6b08, #cf23cf, #eedd44);
+            -webkit-text-fill-color: transparent;
+            -webkit-background-clip: text;
+        }
+
+      #blink {
+          font-size: 40px;
+          font-weight: bold;
+          color: red;
+          transition: 0.5s;
+      }
+    </style>
+    
+</head>
+
+<body>
+    <center>
+    <div class="card mb-3">
+        <img src="asset/kawasaki.jpeg" class="card-img-top" alt="kawasaki" style="height:400px;width: 1800px">
+        <div class="card-body">
+            <h1 id="blink" style="color: green;" class="card-title"> Kawasaki The Racing Team</h1>
+            <p class="card-text">
+                The Kawasaki Ninja H2R is a Sports bike available at a starting price 
+                of Rs. 79.9 Lakh. The bike is available in 1 variants with 1 colour options.
+                
+                <span id="points">...</span>
+        
+                <!-- Define the text that would be
+                    hidden by default and only shown
+                    when clicked on the button -->
+                <span id="moreText">  The 998.0 cc engine of Ninja H2R is mated with 6 gears, 
+                    producing maximum power of 322.00 bhp @ 14000 rpm 
+                    and a maximum torque of 165.00 Nm @ 12500 rpm.
+                </span>
+            </p>
+        
+        </div>
+      </div>
+	<!-- Trigger toggleText() when the
+		button is clicked -->
+	<button class="btn btn-primary" onclick="toggleText()" id="textButton">
+		Read More
+	</button>
+
+	<script>
+        
+		function toggleText() {
+
+			// Get all the elements from the page
+			var points =
+				document.getElementById("points");
+
+			var ReadMoreText =
+				document.getElementById("moreText");
+
+			var buttonText =
+				document.getElementById("textButton");
+
+			// If the display property of the dots
+			// to be displayed is already set to
+			// 'none' (that is hidden) then this
+			// section of code triggers
+			if (points.style.display === "none") {
+
+				// Hide the text between the span
+				// elements
+				ReadMoreText.style.display = "none";
+
+				// Show the dots after the text
+				points.style.display = "inline";
+
+				// Change the text on button to
+				// 'Read More'
+				buttonText.innerHTML = "Read More";
+			}
+
+			// If the hidden portion is revealed,
+			// we will change it back to be hidden
+			else {
+
+				// Show the text between the
+				// span elements
+				ReadMoreText.style.display = "inline";
+
+				// Hide the dots after the text
+				points.style.display = "none";
+
+				// Change the text on button
+				// to 'REad Less'
+				buttonText.innerHTML = "Read Less";
+			}
+		}
+        
+	</script>
+    <script>
+        type="text/javascript">
+    var blink = document.getElementById('blink');
+    setInterval(function() {
+        blink.style.opacity = (blink.style.opacity == 0 ? 1 : 0);
+    }, 1500);
+
+    var blink = document.getElementById('blink');
+    setInterval(function() {
+        blink.style.opacity = (blink.style.opacity == 0 ? 1 : 0);
+    }, 1500);
+    </script>
+    </center>
+</body>
+
+</html>
